@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+/* HEADER */
+
+header article {
+    height: 10vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.header-article-div h2 {
+    font-size: 3rem;
+}
+
+/* FOOTER */
+
+footer{
+    height: 15vh;
+}
+
+footer div a {
+    width: 20px;
+}
+
+
+
+/* CAMBIOS */
+
+/* KRRUSEL */
+.carousel-caption, .carousel-item, .carousel-caption p, h3, .carousel-indicators, .carousel-control-next-icon, .carousel-control-prev-icon  {
+    background-color: transparent;
+}
+
+.carousel-control-next-icon:hover, .carousel-control-prev-icon:hover {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.carousel-item--one, .carousel-item--two, .carousel-item--three {
+    background-image: url(../img/orquestra.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position-x: center;
+}
+
+.carousel-item--one {
+    background-image: url(../img/orquestra.jpeg);
+    background-position-y: 72%;
+}
+
+.carousel-item--two {
+    background-image: url(../img/circo.jpeg);
+    background-position-y: 61%;
+}
+
+.carousel-item--three {
+    background-image: url(../img/festival.avif);
+    background-position-y: 72%;
+}
+
+/* BOTON LUPA */
+
+.btn.btn-outline-secondary {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bi.bi-search {
+    background-color: transparent;
+}
+
+
+/* HEADER */
+header nav div .collapse ul li a {
+    background-color: #d90368;
+    border-color: #d90368;
+    color: #fff;
+}
+
+
+/* CARDS */
+
+.card.bg-light:hover {
+    box-shadow: 0px 0px 12px 3px #279f4d;
+    border-color: #279f4d;
+}
+
+.card.bg-light {
+    border-radius: 0px;
+}
+
+.rounded.p-3 {
+    border-radius: 0%!important;
+}
+
+.rounded.p-3 img {
+    border-radius: 5px;
+}
+
+.card-link.btn.btn-primary {
+    background-color: #279f4d;
+    border-color: #279f4d;
+}
+
+/* FOOTER */
+
+footer {
+    justify-content: space-around;
+    padding: 0px 60px;
+}
+
+footer div p, footer div a i {
+    color:#d90368;
+}
+
+/* footer div a i{
+     font-size: 2rem;
+     margin-right: 10px; 
+} */
+
+
+/* CONTACT HTML INPUT & BOTON SUBMIT */
+
+.main-contact-html {
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+.main-contact-html form {
+    width: 20%;
+    padding: 20px 0;
+}
+
+.mb-3.mb-3--input {
+    width: 80%;
+}
+
+
+.mb-3.mb-3--input input {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: rgb(39, 159, 77);
+    font-size: 1.2rem;
+}
+
+textarea {
+    color: #279f4d;
+    border-radius: .375rem;
+}
+
+.btn-submit-contact button {
+    background-color: #279f4d;
+    color: #fff;
+}
+
+/* TABLE - Stats */
+
+main div table .main-div-table-tr {
+    font-size: 1.2rem;
+}
+
+main div table .main-div-table-tr-td {
+    font-size: 1rem;
+}
