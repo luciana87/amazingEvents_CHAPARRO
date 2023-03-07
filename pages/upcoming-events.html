@@ -60,22 +60,19 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item carousel-item--one active">
-<!--                         <img src="../amazingEvents_CHAPARRO/aseets/img/orquestra.jpeg" class="d-block w-100" alt="Orchestra">
- -->                        <div class="carousel-caption d-none d-md-block">
+                       <div class="carousel-caption d-none d-md-block">
                             <h3>Orchestra</h3>
                             <p>Orchestra</p>
                         </div>
                     </div>
                     <div class="carousel-item carousel-item--two">
-<!--                         <img src="../amazingEvents_CHAPARRO/aseets/img/circo.jpeg" class="d-block w-100" alt="circus">
- -->                        <div class="carousel-caption d-none d-md-block">
+                       <div class="carousel-caption d-none d-md-block">
                             <h3>CIrcus</h3>
                             <p>Circus</p>
                         </div>
                     </div>
                     <div class="carousel-item carousel-item--three">
-<!--                         <img src="../amazingEvents_CHAPARRO/aseets/img/festival.avif" class="d-block w-100" alt="Festival">
- -->                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
                             <h3>Festival</h3>
                             <p>Festival</p>
                         </div>
@@ -91,7 +88,6 @@
                 </button>
               </div>
         </div>
-
         <article>
             <div class="header-article-div">
                 <h2 class="display-5">Upcoming Events</h2>
@@ -145,70 +141,26 @@
                 </form>
             </div>
         </div>
-        <div class="d-flex flex-wrap gap-4 justify-content-center">
-            <div class="card bg-light" style="width: 18rem;">
-                <div class="p-3 rounded">
-                    <img src="../aseets/img/Cinema.jpg" class="rounded shadow-lg card-img-top" alt="Cinema"
-                        height="175">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Cinema</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <div class="d-flex flex-wrap justify-content-between gap-3">
-                        <div>
-                            <p>u$s2400</p>
-                        </div>
-                        <div>
-                            <a href="./pages/upcoming-events.html" class="card-link btn btn-primary">View
-                                more...</a>
+        <div id="container-card" class="d-flex flex-wrap gap-4 justify-content-center">
+            <template id="card-index">
+                <div class="card bg-light" style="width: 18rem;">
+                    <div class="p-3 rounded">
+                        <img src="${image}" class="rounded shadow-lg card-img-top" alt="Cinema" height="175">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text">${description}</p>
+                        <div class="d-flex flex-wrap justify-content-between gap-3">
+                            <div>
+                                <p class="price">${price}</p>
+                            </div>
+                            <div>
+                                <a href="./details.html" class="card-link btn btn-primary">View more...</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card bg-light" style="width: 18rem;">
-                <div class="p-3 rounded">
-                    <img src="../aseets/img/Costume_Party.jpg" class="rounded shadow-lg card-img-top" alt="Costume_Party"
-                        height="175">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Costume Party</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <div class="d-flex flex-wrap justify-content-between gap-3">
-                        <div>
-                            <p>u$s2800</p>
-                        </div>
-                        <div>
-                            <a href="./pages/upcoming-events.html" class="card-link btn btn-primary">View
-                                more...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card bg-light" style="width: 18rem;">
-                <div class="p-3 rounded">
-                    <img src="../aseets/img/Food_Fair.jpg" class="rounded shadow-lg card-img-top" alt="Food_Fair"
-                        height="175">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Food Fair</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <div class="d-flex flex-wrap justify-content-between gap-3">
-                        <div>
-                            <p>u$s1300</p>
-                        </div>
-                        <div>
-                            <a href="./pages/upcoming-events.html" class="card-link btn btn-primary">View
-                                more...</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </template>
         </div>
     </main>
     <footer class="bg-black text-white d-flex justify-content-between align-items-center">
@@ -224,5 +176,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+    <script type="module" src="../aseets/js/upcoming-events.js"></script>
+    <script type="module" src="../aseets/js/amazing.js"></script>
 </body>
 </html>
