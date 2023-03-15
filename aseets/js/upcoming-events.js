@@ -1,4 +1,5 @@
 import data from './amazing.js';
+import { createCheckBoxes, applyFilters } from "./functions.js";
 
 
 /* Obtengo fecha */
@@ -7,12 +8,17 @@ const fecha = data.currentDate;
 /* Recupero el arreglo importado: */
 const events = data.events;
 
+
+const containerCheck = document.getElementById('container-check');
+const inputSearch = document.getElementById('input-search');
+
+
 /* Genero arreglo nuevo con eventos filtrados por fecha: */
 
-const pastEvents = events.filter(function (event){
+const futureEvents = events.filter(function (event){
     return event.date > fecha;
 });
-console.log(pastEvents);
+console.log(futureEvents);
 
 
 
@@ -20,7 +26,7 @@ const containerCard = document.getElementById('container-card');
 const template = document.getElementById('card-index').content;
 const fragment = document.createDocumentFragment();
 
-pastEvents.forEach(event => {
+futureEvents.forEach(event => {
     template.querySelector('.card-img-top').src = event.image;
     template.querySelector('.card-title').textContent = event.name;
     template.querySelector('.card-text').textContent = event.description;
@@ -32,3 +38,10 @@ pastEvents.forEach(event => {
 })
 
 containerCard.appendChild(fragment);
+
+
+createCheckBoxes(futureEvents, containerCheck);
+
+
+inputSearch.addEventListener('input', function() {applyFilters(futureEvents, inputSearch.value, containerCard)})
+containerCheck.addEventListener('change', function() {applyFilters(futureEvents, inputSearch.value, containerCard)})

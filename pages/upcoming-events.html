@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-black">
@@ -60,13 +62,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item carousel-item--one active">
-                       <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
                             <h3>Orchestra</h3>
                             <p>Orchestra</p>
                         </div>
                     </div>
                     <div class="carousel-item carousel-item--two">
-                       <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block">
                             <h3>CIrcus</h3>
                             <p>Circus</p>
                         </div>
@@ -78,15 +80,17 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
-              </div>
+            </div>
         </div>
         <article>
             <div class="header-article-div">
@@ -96,39 +100,13 @@
     </header>
     <main class="p-3 bg-black">
         <div class="d-flex justify-content-between mb-5">
-            <div class="d-flex gap-3">
-                <div class="mb-3 form-check">
-                    <label class="form-check-label" for="exampleCheck1">Category</label>
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                </div>
-                <div class="mb-3 form-check">
-                    <label>
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
+            <div id="container-check" class="d-flex gap-3">
+
             </div>
             <div>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id="input-search" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
                     <button type="button" class="btn btn-outline-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">
@@ -141,26 +119,28 @@
                 </form>
             </div>
         </div>
-        <div id="container-card" class="d-flex flex-wrap gap-4 justify-content-center">
-            <template id="card-index">
-                <div class="card bg-light" style="width: 18rem;">
-                    <div class="p-3 rounded">
-                        <img src="${image}" class="rounded shadow-lg card-img-top" alt="${image}" height="175">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">${name}</h5>
-                        <p class="card-text">${description}</p>
-                        <div class="d-flex flex-wrap justify-content-between gap-3">
-                            <div>
-                                <p class="price">${price}</p>
-                            </div>
-                            <div>
-                                <a href="./details.html?id=${_id}" class="card-link btn btn-primary">View more...</a>
-                            </div>
+
+        <template id="card-index">
+            <div class="card bg-light" style="width: 18rem;">
+                <div class="p-3 rounded">
+                    <img src="${image}" class="rounded shadow-lg card-img-top" alt="${image}" height="175">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">${description}</p>
+                    <div class="d-flex flex-wrap justify-content-between gap-3">
+                        <div>
+                            <p class="price">${price}</p>
+                        </div>
+                        <div>
+                            <a href="./details.html?id=${_id}" class="card-link btn btn-primary">View more...</a>
                         </div>
                     </div>
                 </div>
-            </template>
+            </div>
+        </template>
+        <div id="container-card" class="d-flex flex-wrap gap-4 justify-content-center">
+
         </div>
     </main>
     <footer class="bg-black text-white d-flex justify-content-between align-items-center">
@@ -179,4 +159,5 @@
     <script type="module" src="../aseets/js/upcoming-events.js"></script>
     <script type="module" src="../aseets/js/amazing.js"></script>
 </body>
+
 </html>

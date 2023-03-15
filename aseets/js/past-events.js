@@ -1,4 +1,5 @@
 import data from "./amazing.js";
+import { createCheckBoxes, applyFilters } from "./functions.js";
 
 
 /* Obtengo fecha */
@@ -7,12 +8,14 @@ const fecha = data.currentDate;
 /* Recupero el arreglo importado: */
 const events = data.events;
 
+const containerCheck = document.getElementById('container-check');
+const inputSearch = document.getElementById('input-search');
+
 /* Genero arreglo nuevo con eventos filtrados por fecha: */
 const pastEvents = events.filter(function (event){
     return event.date < fecha;
 });
 console.log(pastEvents);
-
 
 
 const containerCard = document.getElementById('container-card');
@@ -30,3 +33,11 @@ pastEvents.forEach(event => {
 })
 
 containerCard.appendChild(fragment);
+
+
+createCheckBoxes(pastEvents, containerCheck);
+
+
+inputSearch.addEventListener('input', function() {applyFilters(pastEvents, inputSearch.value, containerCard)})
+containerCheck.addEventListener('change', function() {applyFilters(pastEvents, inputSearch.value, containerCard)})
+

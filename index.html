@@ -101,39 +101,12 @@
     </header>
     <main class="p-3">
         <div class="d-flex justify-content-between mb-5">
-            <div class="d-flex gap-3">
-                <div class="mb-3 form-check">
-                    <label class="form-check-label" for="exampleCheck1">Category</label>
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                </div>
-                <div class="mb-3 form-check">
-                    <label>
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
-                <div class="mb-3 form-check">
-                    <label class="form-check-label">
-                        Category
-                        <input type="checkbox" class="form-check-input">
-                    </label>
-                </div>
+            <div id="container-check" class="d-flex gap-3">
+         
             </div>
             <div>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id="input-search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button type="button" class="btn btn-outline-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-search" viewBox="0 0 16 16">
@@ -146,26 +119,27 @@
                 </form>
             </div>
         </div>
-        <div id="container-card" class="d-flex flex-wrap gap-4 justify-content-center">
-            <template id="card-index">
-                <div class="card bg-light" style="width: 18rem;">
-                    <div class="p-3 rounded">
-                        <img src="${image}" class="rounded shadow-lg card-img-top" alt="${image}" height="175">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">${name}</h5>
-                        <p class="card-text">${description}</p>
-                        <div class="d-flex flex-wrap justify-content-between gap-3">
-                            <div>
-                                <p class="price">${price}</p>
-                            </div>
-                            <div>
-                                <a href="./pages/details.html?id=${_id}" class="card-link btn btn-primary">View more...</a>
-                            </div>
+        <template id="card-index">
+            <div class="card bg-light" style="width: 18rem;">
+                <div class="p-3 rounded">
+                    <img src="${image}" class="rounded shadow-lg card-img-top" alt="${image}" height="175">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">${description}</p>
+                    <div class="d-flex flex-wrap justify-content-between gap-3">
+                        <div>
+                            <p class="price">${price}</p>
+                        </div>
+                        <div>
+                            <a href="./pages/details.html?id=${_id}" class="card-link btn btn-primary">View more...</a>
                         </div>
                     </div>
                 </div>
-            </template>
+            </div>
+        </template>
+        <div id="container-card" class="d-flex flex-wrap gap-4 justify-content-center">
+            
         </div>
     </main>
     <footer class="bg-black text-white d-flex justify-content-between align-items-center">
