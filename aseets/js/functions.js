@@ -82,7 +82,7 @@ function drawEvents(array, container) {
         template.querySelector('.card-title').textContent = event.name;
         template.querySelector('.card-text').textContent = event.description;
         template.querySelector('.price').textContent = '$ ' + event.price;
-        template.querySelector('.card-link').href = './pages/details.html?id=' + event._id;
+        template.querySelector('.card-link').href = './details.html?id=' + event._id;
 
         const clone = template.cloneNode(true);
         fragment.appendChild(clone);
