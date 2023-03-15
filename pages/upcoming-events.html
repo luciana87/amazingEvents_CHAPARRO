@@ -145,7 +145,7 @@
             <template id="card-index">
                 <div class="card bg-light" style="width: 18rem;">
                     <div class="p-3 rounded">
-                        <img src="${image}" class="rounded shadow-lg card-img-top" alt="Cinema" height="175">
+                        <img src="${image}" class="rounded shadow-lg card-img-top" alt="${image}" height="175">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${name}</h5>
@@ -155,7 +155,7 @@
                                 <p class="price">${price}</p>
                             </div>
                             <div>
-                                <a href="./details.html" class="card-link btn btn-primary">View more...</a>
+                                <a href="./details.html?id=${_id}" class="card-link btn btn-primary">View more...</a>
                             </div>
                         </div>
                     </div>

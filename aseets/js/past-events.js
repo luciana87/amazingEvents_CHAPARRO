@@ -1,5 +1,6 @@
 import data from "./amazing.js";
 
+
 /* Obtengo fecha */
 const fecha = data.currentDate;
 
@@ -7,9 +8,6 @@ const fecha = data.currentDate;
 const events = data.events;
 
 /* Genero arreglo nuevo con eventos filtrados por fecha: */
-
-// const pastEvents2 = events.filter(event => event.date < fecha);
-
 const pastEvents = events.filter(function (event){
     return event.date < fecha;
 });
@@ -26,43 +24,9 @@ pastEvents.forEach(event => {
     template.querySelector('.card-title').textContent = event.name;
     template.querySelector('.card-text').textContent = event.description;
     template.querySelector('.price').textContent = '$ ' + event.price;
+    template.querySelector('.card-link').href = './details.html?id=' + event._id;
     const clone = template.cloneNode(true);
     fragment.appendChild(clone);
 })
 
 containerCard.appendChild(fragment);
-
-
-
-
-
-
-
-
-// const pastEvents = function (eventos){
-//     let fechaActual = new Date();
-//     let pastEvents = [];
-
-//     eventos.forEach(evento => {
-//         if(evento.date < fechaActual){
-//             pastEvents.push(evento);
-//         }    
-//     });
-//     return pastEvents;
-// }
-
-
-// //-----------------------------------------------------------------------
-
-// let eventos = [
-//     {
-//         nombre: "Circus",
-//         date: new Date(2001, 06,26)
-//     },
-//     {
-//         nombre: "Festival",
-//         date: new Date(2023,05,04)
-//     }
-// ]
-
-// console.log(pastEvents(eventos));
