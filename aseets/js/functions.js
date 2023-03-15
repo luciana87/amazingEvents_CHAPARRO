@@ -61,14 +61,14 @@ function filterByCategory(array){
 
 
 
-function applyFilters(array, text, container) {
+function applyFilters(array, text, container, detailUrl) {
     let resultFilterByName = filterByName(array, text)
     let resultFilterByCategory = filterByCategory(resultFilterByName)
-    drawEvents(resultFilterByCategory, container)
+    drawEvents(resultFilterByCategory, container, detailUrl)
 }
 
 
-function drawEvents(array, container) {
+function drawEvents(array, container, detailUrl) {
     container.innerHTML = '';
     if(array.length == 0){
         container.innerHTML = `<h4 class="display-5 fw-bolder">No hay coincidencias</h4>`
@@ -82,7 +82,7 @@ function drawEvents(array, container) {
         template.querySelector('.card-title').textContent = event.name;
         template.querySelector('.card-text').textContent = event.description;
         template.querySelector('.price').textContent = '$ ' + event.price;
-        template.querySelector('.card-link').href = './details.html?id=' + event._id;
+        template.querySelector('.card-link').href = detailUrl + '?id=' + event._id;
 
         const clone = template.cloneNode(true);
         fragment.appendChild(clone);

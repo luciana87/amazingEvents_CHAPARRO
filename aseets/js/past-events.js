@@ -36,8 +36,13 @@ containerCard.appendChild(fragment);
 
 
 createCheckBoxes(pastEvents, containerCheck);
+let detailUrl = './details.html';
 
 
-inputSearch.addEventListener('input', function() {applyFilters(pastEvents, inputSearch.value, containerCard)})
-containerCheck.addEventListener('change', function() {applyFilters(pastEvents, inputSearch.value, containerCard)})
+inputSearch.addEventListener('input', function() {
+    applyFilters(pastEvents, inputSearch.value, containerCard, detailUrl)
+})
+containerCheck.addEventListener('change', function() {
+    applyFilters(pastEvents, inputSearch.value, containerCard, detailUrl)
+})
 
