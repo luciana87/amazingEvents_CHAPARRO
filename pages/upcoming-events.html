@@ -17,9 +17,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container-fluid bg-black p-3">
-                <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid p-3">
+                <div class="nav-logo container">
                     <a class="navbar-brand" href="#">
                         <img src="../aseets/img/Logo_amazing_events.png" alt="Bootstrap" width="400">
                     </a>
@@ -30,20 +30,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="container collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
-                        <li class="nav-item d-flex flex-grow-1">
+                    <ul id="navbar-ul" class="d-flex navbar-nav mb-2 gap-3">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" aria-current="page" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link active btn btn-light" href="#">Upcoming Events</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./past-events.html">Past Events</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./contact.html">Contact</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./stats.html">Stats</a>
                         </li>
                     </ul>
@@ -98,12 +98,12 @@
             </div>
         </article>
     </header>
-    <main class="p-3 bg-black">
-        <div class="d-flex justify-content-between mb-5">
+    <main class="p-3">
+        <div class="main-div p-4 d-flex">
             <div id="container-check" class="d-flex gap-3">
 
             </div>
-            <div>
+            <div id="container-input" class="d-flex">
                 <form class="d-flex" role="search">
                     <input id="input-search" class="form-control me-2" type="search" placeholder="Search"
                         aria-label="Search">

@@ -17,9 +17,9 @@
 
 <body class="bg-black">
     <header>
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container-fluid bg-black p-3">
-                <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid p-3">
+                <div class="nav-logo container">
                     <a class="navbar-brand" href="#">
                         <img src="../aseets/img/Logo_amazing_events.png" alt="Bootstrap" width="400">
                     </a>
@@ -30,80 +30,38 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="container collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
-                        <li class="nav-item d-flex flex-grow-1">
+                    <ul id="navbar-ul" class="d-flex navbar-nav mb-2 gap-3">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" aria-current="page" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./upcoming-events.html">Upcoming Events</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./past-events.html">Past Events</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./contact.html">Contact</a>
                         </li>
-                        <li class="nav-item d-flex flex-grow-1">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-light" href="./stats.html">Stats</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div>
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item carousel-item--one active">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Orchestra</h3>
-                            <p>Orchestra</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item carousel-item--two">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>CIrcus</h3>
-                            <p>Circus</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item carousel-item--three">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Festival</h3>
-                            <p>Festival</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <article>
-            <div class="header-article-div mt-3">
-                <h2 class="display-5 text-uppercase">Details</h2>
+        <article id="article-detail">
+            <div class="header-article-div bg-transparent">
+                <h2 class="bg-transparent text-uppercase">Details</h2>
             </div>
         </article>
     </header>
-    <main class="d-flex flex-column align-items-center justify-content-center">
-
-        <div id="container-detail" class="d-flex flex-column mt-2 align-items-start">
-             
+    <main id="main-detail" class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div id="container-detail">
+                 
+            </div>
         </div>
-
     </main>
     <footer class="bg-black text-white d-flex justify-content-between align-items-center">
         <div>
