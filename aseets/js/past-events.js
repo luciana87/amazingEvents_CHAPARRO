@@ -5,23 +5,30 @@ import { createCheckBoxes, applyFilters } from "./functions.js";
 /* Obtengo fecha */
 const fecha = data.currentDate;
 
-/* Recupero el arreglo importado: */
+/* Recupero el arreglo importado */
 const events = data.events;
 
+//obtengo los contenedores
 const containerCheck = document.getElementById('container-check');
 const inputSearch = document.getElementById('input-search');
+const containerCard = document.getElementById('container-card');
 
-/* Genero arreglo nuevo con eventos filtrados por fecha: */
+
+const template = document.getElementById('card-index').content;
+const fragment = document.createDocumentFragment();
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+// Genero arreglo nuevo con eventos filtrados por fecha:
 const pastEvents = events.filter(function (event){
     return event.date < fecha;
 });
 console.log(pastEvents);
 
 
-const containerCard = document.getElementById('container-card');
-const template = document.getElementById('card-index').content;
-const fragment = document.createDocumentFragment();
-
+//Cards dinámicas (falta modular y pasar a functions.js, generalizar)
 pastEvents.forEach(event => {
     template.querySelector('.card-img-top').src = event.image;
     template.querySelector('.card-title').textContent = event.name;
@@ -33,6 +40,9 @@ pastEvents.forEach(event => {
 })
 
 containerCard.appendChild(fragment);
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 createCheckBoxes(pastEvents, containerCheck);
