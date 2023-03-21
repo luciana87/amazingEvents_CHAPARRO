@@ -1,52 +1,49 @@
-// function drawCards(array, detailUrl){
-
-//     //const template = document.getElementById('card-index').content;
-
-//     futureEvents.forEach(event => {
-//         template.querySelector('.card-img-top').src = event.image;
-//         template.querySelector('.card-title').textContent = event.name;
-//         template.querySelector('.card-text').textContent = event.description;
-//         template.querySelector('.price').textContent = '$ ' + event.price;
-//         template.querySelector('.card-link').href = './details.html?id=' + event._id;
-
-//         const clone = template.cloneNode(true);
-//         fragment.appendChild(clone);
-//     })
-
-//     containerCard.appendChild(fragment);
-// }
-//
-//FALTA TERMINAR
 
 
+function drawCards(array, detailUrl, template, container){
 
+    const fragment = document.createDocumentFragment();
+    array.forEach(event => {
+        template.querySelector('.card-img-top').src = event.image;
+        template.querySelector('.card-title').textContent = event.name;
+        template.querySelector('.card-text').textContent = event.description;
+        template.querySelector('.price').textContent = '$ ' + event.price;
+        template.querySelector('.card-link').href = detailUrl + '?id=' + event._id;
+
+        const clone = template.cloneNode(true);
+        fragment.appendChild(clone);
+    })
+
+    container.appendChild(fragment);
+}
+
+
+
+//Crea los details de las cards
 function createDetail(event, detailContainer){
 
     let div = document.createElement('div');
+    div.classList = 'image container-box';
     div.innerHTML = `
-        <div class='widget d-flex flex-column justify-content-between flex-grow-1 rounded shadow-lg card-img-top bg-dark text-white'>
-            <div class="bg-light w-100 d-flex flex-column">
-                <img class="img-fluid h-100" alt="${event.image}" src="${event.image}">
-            </div>
-            <div class="container w-100 ms-3 bg-transparent d-flex flex-column">
-                <h3 class="display-6 mt-3 bg-transparent">${event.name}</h3>
-                <div class="bg-transparent mb-3">
-                    <ul class="list-group bg-transparent">
-                        <li class="list-group mt-6 me-2 fs-5 fw-lighter fs-4 bg-transparent">${event.date}</li>
-                        <li class="list-group mt-2 me-2 mb-4 lh-sm fw-lighter fs-4 bg-transparent">${event.category}</li>
-                        <li class="text-justify list-group fw-light fs-4 mt-3 me-2 lh-sm bg-transparent">${event.description}</li>
-                        <li class="list-group mt-2 me-2 lh-sm fw-light fs-4 bg-transparent">This event takes place in ${event.place}. It has capacity for ${event.capacity} people.</li>
-                        <li class="list-group mt-2 me-2 lh-sm fw-light fs-4 bg-transparent">Estimated assistance: ${(event.assistance)?event.assistance: '-'}</li>
-                        <li class="list-group mt-2 me-2 lh-sm fw-light fs-4 bg-transparent">The current price for this event is : $${event.price}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <img src="${event.image}" class="img-fluid" alt="${event.image}">
+    </div>
+    <div class="div-card-body container-box">
+        <h3 class="fs-1 mt-3 bg-transparent">${event.name}</h3>
+        <ul class="list-group bg-transparent">
+            <li class="list-group fw-lighter fs-5 bg-transparent">${event.date}</li>
+            <li class="list-group mb-4 lh-sm fw-lighter fs-5 bg-transparent">${event.category}</li>
+            <li class="text-justify list-group fw-light fs-4 mt-3 lh-sm bg-transparent">${event.description}</li>
+            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">This event takes place in ${event.place}. It has capacity for ${event.capacity} people.</li>
+            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">Estimated assistance: ${(event.assistance)?event.assistance: '-'}</li>
+            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">The current price for this event is : $${event.price}</li>
+        </ul>
     `
     detailContainer.appendChild(div);
 }
 
 
+
+//Crea checkboxes
 function createCheckBoxes(array, containerCheck){
     let arrayCategory = array.map(event => event.category);
     let setCategory = new Set(arrayCategory);
@@ -62,10 +59,13 @@ function createCheckBoxes(array, containerCheck){
 }
 
 
+
 function filterByName(array,texto){
     let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
     return arrayFiltrado
 }
+
+
 
 function filterByCategory(array){
     let checkboxes = document.querySelectorAll("input[type='checkbox']")
@@ -84,9 +84,7 @@ function filterByCategory(array){
 }
 
 
-
-
-
+//Dibuja los events filtrados tanto por categoria como por los checkboxes:
 function drawFilteredEvents(array, container, detailUrl) {
     container.innerHTML = '';
     if(array.length == 0){
@@ -94,23 +92,12 @@ function drawFilteredEvents(array, container, detailUrl) {
         return
     }
     const template = document.getElementById('card-index').content;
-    const fragment = document.createDocumentFragment();
-    
-    array.forEach(event => {
-        template.querySelector('.card-img-top').src = event.image;
-        template.querySelector('.card-title').textContent = event.name;
-        template.querySelector('.card-text').textContent = event.description;
-        template.querySelector('.price').textContent = '$ ' + event.price;
-        template.querySelector('.card-link').href = detailUrl + '?id=' + event._id;
-        
-        const clone = template.cloneNode(true);
-        fragment.appendChild(clone);
-    })
-    
-    container.appendChild(fragment);
+    drawCards(array, detailUrl,template,container);
 }
 
 
+
+// Aplica ambos filtros, el de los checkboxes y el de categorías:
 function applyFilters(array, text, container, detailUrl) {
     let resultFilterByName = filterByName(array, text)
     let resultFilterByCategory = filterByCategory(resultFilterByName)
@@ -119,4 +106,4 @@ function applyFilters(array, text, container, detailUrl) {
 
 
 
-export {createDetail, createCheckBoxes, applyFilters};
+export {createDetail, createCheckBoxes, applyFilters, drawCards};

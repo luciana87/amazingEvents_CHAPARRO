@@ -1,5 +1,5 @@
 import data from './amazing.js';
-import { createCheckBoxes, applyFilters } from "./functions.js";
+import { createCheckBoxes, applyFilters, drawCards } from "./functions.js";
 
 
 /* Obtengo fecha */
@@ -15,12 +15,7 @@ const containerCard = document.getElementById('container-card');
 
 
 const template = document.getElementById('card-index').content;
-const fragment = document.createDocumentFragment();
 let detailUrl = './details.html';
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
 
 // Genero arreglo nuevo con eventos filtrados por fecha
 const futureEvents = events.filter(function (event){
@@ -29,24 +24,15 @@ const futureEvents = events.filter(function (event){
 console.log(futureEvents);
 
 
-//Cards dinámicas (falta modular y pasar a functions.js, generalizar)
-futureEvents.forEach(event => {
-    template.querySelector('.card-img-top').src = event.image;
-    template.querySelector('.card-title').textContent = event.name;
-    template.querySelector('.card-text').textContent = event.description;
-    template.querySelector('.price').textContent = '$ ' + event.price;
-    template.querySelector('.card-link').href = './details.html?id=' + event._id;
-
-    const clone = template.cloneNode(true);
-    fragment.appendChild(clone);
-})
-
-containerCard.appendChild(fragment);
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
+    
+    
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    
+    
+drawCards(futureEvents, detailUrl, template, containerCard);
 createCheckBoxes(futureEvents, containerCheck);
 
 
