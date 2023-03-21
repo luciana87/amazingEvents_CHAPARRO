@@ -23,7 +23,6 @@
 function createDetail(event, detailContainer){
 
     let div = document.createElement('div');
-    div.classList = 'container d-flex flex-column mt-2 align-items-start p-3 bg-danger-subtle w-50';
     div.innerHTML = `
         <div class='widget d-flex flex-column justify-content-between flex-grow-1 rounded shadow-lg card-img-top bg-dark text-white'>
             <div class="bg-light w-100 d-flex flex-column">
