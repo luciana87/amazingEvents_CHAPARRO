@@ -1,34 +1,32 @@
 import { createCheckBoxes, applyFilters, drawCards, getData } from "./functions.js";
 
+// Obtengo los datos:
 let urlApi = '../aseets/data/amazing.json'
 let data = await getData(urlApi);
+let futureEvents = [];
 
-/* Obtengo fecha */
-const fecha = data.currentDate;
+if (data != null) {
+    const fecha = data.currentDate; //Obtengo fecha
+    const events = data.events; //Obtengo eventos
+    futureEvents = events.filter(function (event){
+        return event.date > fecha; //Filtra los futureEvents
+    });
+}
 
-/* Recupero el arreglo importado: */
-const events = data.events;
 
-//obtengo los contenedores
+// Obtengo los contenedores:
 const containerCheck = document.getElementById('container-check');
 const inputSearch = document.getElementById('input-search');
 const containerCard = document.getElementById('container-card');
 
-
 const template = document.getElementById('card-index').content;
 let detailUrl = './details.html';
-
-// Genero arreglo nuevo con eventos filtrados por fecha
-const futureEvents = events.filter(function (event){
-    return event.date > fecha;
-});
-console.log(futureEvents);
 
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-    
+
     
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
     

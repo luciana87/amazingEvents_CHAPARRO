@@ -1,5 +1,5 @@
 
-
+// Dibuja las cards dinamicamente:
 function drawCards(array, detailUrl, template, container){
 
     const fragment = document.createDocumentFragment();
@@ -19,7 +19,7 @@ function drawCards(array, detailUrl, template, container){
 
 
 
-//Crea los details de las cards
+// Crea los details de las cards:
 function createDetail(event, detailContainer){
 
     let div = document.createElement('div');
@@ -34,7 +34,7 @@ function createDetail(event, detailContainer){
             <li class="list-group mb-4 lh-sm fw-lighter fs-5 bg-transparent">${event.category}</li>
             <li class="text-justify list-group fw-light fs-4 mt-3 lh-sm bg-transparent">${event.description}</li>
             <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">This event takes place in ${event.place}. It has capacity for ${event.capacity} people.</li>
-            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">Estimated assistance: ${(event.assistance)?event.assistance: '-'}</li>
+            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">Assistance: ${(event.assistance)?event.assistance: '-'}</li>
             <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">The current price for this event is : $${event.price}</li>
         </ul>
     `
@@ -43,7 +43,7 @@ function createDetail(event, detailContainer){
 
 
 
-//Crea checkboxes
+// Crea checkboxes:
 function createCheckBoxes(array, containerCheck){
     let arrayCategory = array.map(event => event.category);
     let setCategory = new Set(arrayCategory);
@@ -59,32 +59,30 @@ function createCheckBoxes(array, containerCheck){
 }
 
 
-
+// Filtra por nombre:
 function filterByName(array,texto){
     let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
     return arrayFiltrado
 }
 
 
-
+// Filtra por categoría:
 function filterByCategory(array){
-    let checkboxes = document.querySelectorAll("input[type='checkbox']")
-    console.log(checkboxes);
-    let arrayChecks = Array.from(checkboxes)
-    let arrayChecksChecked = arrayChecks.filter(check => check.checked)
-    console.log(arrayChecksChecked);
-    let arrayChecksCheckedValues = arrayChecksChecked.map(checkChecked => checkChecked.value)
-    console.log(arrayChecksCheckedValues);
-    let arrayFiltrado = array.filter(elemento => arrayChecksCheckedValues.includes(elemento.category))
-    console.log(arrayFiltrado);
+
+    let checkboxes = document.querySelectorAll("input[type='checkbox']");
+    let arrayChecks = Array.from(checkboxes);
+    let arrayChecksChecked = arrayChecks.filter(check => check.checked);
+    let arrayChecksCheckedValues = arrayChecksChecked.map(checkChecked => checkChecked.value);
+    let arrayFiltrado = array.filter(elemento => arrayChecksCheckedValues.includes(elemento.category));
+  
     if(arrayChecksChecked.length > 0){
         return arrayFiltrado
     }
-    return array
+    return array;
 }
 
 
-//Dibuja los events filtrados tanto por categoria como por los checkboxes:
+// Dibuja los events filtrados tanto por categoría como por los checkboxes:
 function drawFilteredEvents(array, container, detailUrl) {
     container.innerHTML = '';
     if(array.length == 0){
@@ -99,17 +97,19 @@ function drawFilteredEvents(array, container, detailUrl) {
 
 // Aplica ambos filtros, el de los checkboxes y el de categorías:
 function applyFilters(array, text, container, detailUrl) {
-    let resultFilterByName = filterByName(array, text)
-    let resultFilterByCategory = filterByCategory(resultFilterByName)
-    drawFilteredEvents(resultFilterByCategory, container, detailUrl)
+    let resultFilterByName = filterByName(array, text);
+    let resultFilterByCategory = filterByCategory(resultFilterByName);
+    drawFilteredEvents(resultFilterByCategory, container, detailUrl);
 }
 
+
+// Obtiene los datos asincronicamente:
 async function getData(urlApi) {
     let data = null;
     try {
         data = await fetch(urlApi).then(response => response.json());
     } catch (error) {
-        console.log(error);
+        window.alert('An error occurred while retrieving data.');
     }
     return data;
 }
