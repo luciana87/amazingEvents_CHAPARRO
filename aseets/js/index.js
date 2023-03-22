@@ -1,7 +1,8 @@
-import data from "./amazing.js";
-import { createCheckBoxes, applyFilters, drawCards } from "./functions.js";
+import { createCheckBoxes, applyFilters, drawCards, getData } from "./functions.js";
 
 /* Obtengo fecha */
+let urlApi = '../aseets/data/amazing.json'
+let data = await getData(urlApi);
 const fecha = data.currentDate;
 
 /* Recupero el arreglo importado: */
@@ -25,7 +26,7 @@ let detailUrl = './pages/details.html';
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-// drawCarousel(eve);
+
 drawCards(events, detailUrl, template, containerCard);
 createCheckBoxes(events, containerCheck);
 

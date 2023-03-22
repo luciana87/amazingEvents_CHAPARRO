@@ -1,6 +1,7 @@
-import data from "./amazing.js";
-import {createDetail} from "./functions.js";
+import {createDetail, getData} from "./functions.js";
 
+let urlApi = '../aseets/data/amazing.json'
+let data = await getData(urlApi);
 
 //Obtengo los eventos
 const events = data.events;
@@ -16,7 +17,6 @@ console.log(eventId);
 
 //Obtengo el evento
 const event = events.find(event => event._id == eventId);
-//console.log(event);
 
 
 createDetail(event, containerDetail);

@@ -1,6 +1,7 @@
-import data from './amazing.js';
-import { createCheckBoxes, applyFilters, drawCards } from "./functions.js";
+import { createCheckBoxes, applyFilters, drawCards, getData } from "./functions.js";
 
+let urlApi = '../aseets/data/amazing.json'
+let data = await getData(urlApi);
 
 /* Obtengo fecha */
 const fecha = data.currentDate;

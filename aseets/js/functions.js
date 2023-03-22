@@ -104,6 +104,14 @@ function applyFilters(array, text, container, detailUrl) {
     drawFilteredEvents(resultFilterByCategory, container, detailUrl)
 }
 
+async function getData(urlApi) {
+    let data = null;
+    try {
+        data = await fetch(urlApi).then(response => response.json());
+    } catch (error) {
+        console.log(error);
+    }
+    return data;
+}
 
-
-export {createDetail, createCheckBoxes, applyFilters, drawCards};
+export {createDetail, createCheckBoxes, applyFilters, drawCards, getData};
