@@ -62,90 +62,42 @@
                         <th class="fs-4 fw-semibold" colspan="3" scope="col">Events statistics</th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider">
+                <tbody id="tbody_stats_events" class="table-group-divider">
                     <tr class="main-div-table-tr">
-                        <td>Events with the highest percentage of attendance</td>
-                        <td>Events with the lowest percentage of attendance</td>
-                        <td>Events with larger capacity</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="table-group-divider">
-                        <th class="fs-4 fw-semibold" colspan="3" scope="col">Upcoming events statistics by category</th>
-                    </tr>
-                    <tr class="main-div-table-tr">
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="table-group-divider">
-                        <th class="fs-4 fw-semibold" colspan="3" scope="col">Past Events statistic by category</th>
-                    </tr>
-                    <tr class="main-div-table-tr">
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
-                    </tr>
-                    <tr class="main-div-table-tr-td fw-light">
-                        <td>Example</td>
-                        <td>Example</td>
-                        <td>Example</td>
+                        <td class="col">Events with the highest percentage of attendance</td>
+                        <td class="col">Events with the lowest percentage of attendance</td>
+                        <td class="col">Events with larger capacity</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> 
+            <table class="table table-dark table-striped table-bordered border-white">
+                <thead class="table-group-divider">
+                    <tr>
+                        <th class="fs-4 fw-semibold" colspan="3" scope="col">Upcoming events statistics by category</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_stats_upcoming_events" class="table-group-divider">
+                    <tr class="main-div-table-tr">
+                        <td>Categories</td>
+                        <td>Revenues</td>
+                        <td>Percentage of attendance</td>
+                    </tr>
+                </tbody>
+            </table> 
+            <table class="table table-dark table-striped table-bordered border-white">
+                <thead class="table-group-divider">
+                    <tr>
+                        <th class="fs-4 fw-semibold" colspan="3" scope="col">Past Events statistic by category</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_stats_past_events" class="table-group-divider">
+                    <tr class="main-div-table-tr">
+                        <td>Categories</td>
+                        <td>Revenues</td>
+                        <td>Percentage of attendance</td>
+                    </tr>
+                </tbody>
+            </table>     
         </div>
     </main>
     <footer class="bg-black text-white d-flex justify-content-between align-items-center">
@@ -161,5 +113,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+        <script type="module" src="../aseets/js/stats.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ function createDetail(event, detailContainer){
             <li class="list-group mb-4 lh-sm fw-lighter fs-5 bg-transparent">${event.category}</li>
             <li class="text-justify list-group fw-light fs-4 mt-3 lh-sm bg-transparent">${event.description}</li>
             <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">This event takes place in ${event.place}. It has capacity for ${event.capacity} people.</li>
-            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">Assistance: ${(event.assistance)?event.assistance: '-'}</li>
+            <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">${(event.assistance)?'Assistance: ' + event.assistance: 'Estimate: ' + event.estimate}</li>
             <li class="list-group mt-1 lh-sm fw-light fs-4 bg-transparent">The current price for this event is : $${event.price}</li>
         </ul>
     `
@@ -114,4 +114,26 @@ async function getData(urlApi) {
     return data;
 }
 
-export {createDetail, createCheckBoxes, applyFilters, drawCards, getData};
+// Calcula el promedio de porcentaje de asistencia:
+function calculateAttendancePercentage(events) {
+    let attendance = 0;
+    let capacity = 0;
+    events.forEach(event => {
+        capacity += event.capacity;
+        attendance += (event.assistance) ? event.assistance : event.estimate;
+    })
+    return ((attendance/capacity) * 100).toFixed(2);
+}
+
+// Calcula ganancias:
+function calculateRevenue(events) {
+    let total = 0;
+    events.forEach(event => {
+        let attendance = (event.assistance) ? event.assistance : event.estimate;
+        total += event.price * attendance;
+    })
+    return total;
+}
+
+
+export {createDetail, createCheckBoxes, applyFilters, drawCards, getData, calculateAttendancePercentage, calculateRevenue};
