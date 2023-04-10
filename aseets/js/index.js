@@ -1,7 +1,7 @@
 import { createCheckBoxes, applyFilters, drawCards, getData } from "./functions.js";
 
 /* Obtengo los datos: */
-let urlApi = '../aseets/data/amazing.json'
+let urlApi = './aseets/data/amazing.json'
 let data = await getData(urlApi);
 
 /* Obtengo el arreglo importado y verifico si está vacío: */
